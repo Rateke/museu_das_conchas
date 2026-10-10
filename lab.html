@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratório de conchas</title>
+<meta name="robots" content="noindex">
+<!-- Ferramenta interna: renderiza as conchas procedurais.
+     lab.html            grade com todas as espécies
+     lab.html?id=nautilus&px=1024   uma espécie, fundo transparente (usado pelo exportador) -->
+<style>
+  html,body{margin:0;background:#06192a;color:#cfe;font:12px/1.4 ui-monospace,monospace}
+  canvas{display:block}
+  .lbl{position:absolute;color:#9fd;padding:6px 8px;pointer-events:none}
+  html:has(body.solo), body.solo{background:transparent}
+</style>
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+import { SHAPES, buildShell, underwaterEnvironment, studioLights } from './js/shells.js';
+
+const q = new URLSearchParams(location.search);
+const solo = q.get('id');
+const yaws = (q.get('yaws') || '').split(',').filter(Boolean).map(Number);
+const base = solo ? [solo] : (q.get('ids') ? q.get('ids').split(',') : Object.keys(SHAPES));
+const ids = yaws.length ? base.flatMap(id => yaws.map(() => id)) : base;
+const yawOf = i => yaws.length ? yaws[i % yaws.length] : 0;
+const px = +(q.get('px') || 0);
+const yaw = +(q.get('yaw') || 0);
+if (solo) document.body.classList.add('solo');
+
+const cols = solo ? 1 : (yaws.length || 4), cell = solo ? px || 800 : 340;
+const rows = Math.ceil(ids.length / cols);
+const W = cols * cell, H = rows * cell;
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H);
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.setClearColor(0x000000, 0);
+document.body.appendChild(renderer.domElement);
+const env = underwaterEnvironment(renderer);
+
+const scenes = ids.map((id, i) => {
+  const scene = new THREE.Scene(); scene.environment = env;
+  studioLights(scene);
+  const shell = buildShell(id, { texSize: solo ? 1024 : 512 });
+  shell.rotation.y = (yaw + yawOf(i)) * Math.PI / 180;
+  scene.add(shell);
+  const cam = new THREE.PerspectiveCamera(28, 1, .1, 50); cam.position.set(0, 0, 4.6);
+  if (!solo) {
+    const l = document.createElement('div'); l.className = 'lbl';
+    l.style.left = (i % cols) * cell + 'px'; l.style.top = Math.floor(i / cols) * cell + 'px';
+    l.textContent = id + (yaws.length ? ' ' + yawOf(i) + '°' : ''); document.body.appendChild(l);
+  }
+  return { scene, cam, shell };
+});
+
+renderer.setScissorTest(true);
+function draw() {
+  scenes.forEach(({ scene, cam }, i) => {
+    const x = (i % cols) * cell, y = H - (Math.floor(i / cols) + 1) * cell;
+    renderer.setViewport(x, y, cell, cell); renderer.setScissor(x, y, cell, cell);
+    renderer.render(scene, cam);
+  });
+}
+draw();
+window.labReady = true;
+window.redraw = (deg) => { scenes.forEach(s => s.shell.rotation.y = deg * Math.PI / 180); draw(); };
+</script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="pt-BR" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guia da Marca · Museu das Conchas</title>
+<meta name="description" content="Identidade visual do Museu das Conchas Itapirubá: conceito, logo, cores por profundidade, tipografia, ícones, ilustração 3D, componentes, movimento, voz e aplicações.">
+<meta name="theme-color" content="#04121D">
+<link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,0..100,0..1;1,9..144,300..600,0..100,0..1&family=Geist:wght@300..600&family=Geist+Mono:wght@400..500&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<style>
+/* Guia da marca: manual editorial em capítulos, sobre a mesma base do site.
+   Fundo em degradê de profundidade (superfície no topo, abismo no meio, areia no fim). */
+body { background: linear-gradient(180deg, #0d5068 0, #0A3550 900px, #071F33 2400px, #04121D 4200px, #02080E 7000px, #04121D 9500px, #0A3550 12500px, #0d5068 14500px); }
+.g-hero { min-height: 92vh; display: grid; align-content: end; padding-block: 140px 70px; }
+.g-hero .display { font-size: clamp(56px, 10vw, 170px); }
+.g-top { position: absolute; top: 0; left: 0; right: 0; padding-block: 22px; z-index: 5; }
+.g-top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.g-index { margin-top: 60px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; border-top: 1px solid var(--linha); }
+.g-index a { padding: 16px 12px 16px 0; border-bottom: 1px solid var(--linha); color: var(--bruma); font-size: 15px; display: flex; gap: 10px; align-items: baseline; transition: color .3s; }
+.g-index a:hover { color: var(--espuma); }
+.g-index a span { font-family: var(--f-mono); font-size: 10.5px; color: var(--bio); }
+.ch { padding-block: clamp(80px, 11vw, 150px); border-top: 1px solid var(--linha); }
+.ch__head { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(20px, 4vw, 70px); align-items: end; margin-bottom: clamp(40px, 5vw, 70px); }
+.ch__n { font-family: var(--f-mono); color: var(--bio); font-size: 12px; letter-spacing: .14em; margin-bottom: 18px; }
+.pan { border: 1px solid var(--linha); border-radius: var(--r); background: rgba(4, 18, 29, .45); padding: clamp(20px, 2.4vw, 34px); position: relative; overflow: hidden; }
+.pan .mono { color: var(--bruma); }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.kw { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.cap { margin-top: 12px; color: var(--bruma); font-size: 14px; }
+/* logo */
+.logo-stage { display: grid; place-items: center; min-height: 340px; }
+.logo-stage img { max-width: 80%; }
+.on-sand { background: var(--areia-clara); }
+.on-sand .mono { color: #3D5560; }
+.constr svg { width: 100%; height: auto; }
+.dont { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.dont .pan { min-height: 190px; display: grid; place-items: center; }
+.dont .pan::after { content: ""; position: absolute; left: 14px; right: 14px; top: 50%; height: 2px; background: var(--coral); transform: rotate(-24deg); opacity: .9; }
+.dont p { position: absolute; left: 16px; bottom: 12px; font-size: 13px; color: var(--coral); }
+/* cores */
+.depthband { display: grid; grid-template-columns: repeat(6, 1fr); border-radius: var(--r); overflow: hidden; border: 1px solid var(--linha); }
+.depthband div { min-height: 240px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; }
+.depthband b { font-family: var(--f-display); font-weight: 400; font-size: 24px; font-variation-settings: "opsz" 48, "SOFT" 100; }
+.depthband span { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; opacity: .85; }
+.swatches { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; margin-top: 16px; }
+.sw { border-radius: 18px; overflow: hidden; border: 1px solid var(--linha); }
+.sw i { display: block; height: 120px; }
+.sw div { padding: 12px 14px; display: grid; gap: 2px; font-size: 13px; }
+.sw b { font-family: var(--f-display); font-weight: 400; font-size: 19px; font-variation-settings: "opsz" 36, "SOFT" 100; }
+.sw span { font-family: var(--f-mono); font-size: 10.5px; color: var(--bruma); }
+.ctab { width: 100%; border-collapse: collapse; font-size: 14px; }
+.ctab td, .ctab th { padding: 11px 10px; border-bottom: 1px solid var(--linha); text-align: left; }
+.ctab th { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--nevoa); font-weight: 500; }
+.ctab .ex { display: inline-flex; padding: 4px 12px; border-radius: 8px; font-weight: 500; }
+.ok { color: var(--bio); font-family: var(--f-mono); font-size: 12px; }
+.warn { color: var(--coral); font-family: var(--f-mono); font-size: 12px; }
+.ratio { display: flex; height: 54px; border-radius: 14px; overflow: hidden; margin-top: 16px; }
+.ratio div { display: grid; place-items: center; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .08em; color: rgba(4,18,29,.8); }
+/* tipografia */
+.spec { display: grid; gap: 0; border-top: 1px solid var(--linha); }
+.spec > div { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--linha); align-items: baseline; }
+.spec .mono { color: var(--bruma); font-size: 11px; line-height: 1.7; }
+.font-card .big-a { font-family: var(--f-display); font-weight: 300; font-size: clamp(110px, 13vw, 200px); line-height: .85; font-variation-settings: "opsz" 144, "SOFT" 100; letter-spacing: -.04em; }
+.font-card.geist .big-a { font-family: var(--f-text); font-weight: 400; letter-spacing: -.05em; }
+.font-card.mono .big-a { font-family: var(--f-mono); font-weight: 400; font-size: clamp(56px, 5.4vw, 92px); letter-spacing: -.06em; margin-block: 24px 10px; }
+.axes { margin-top: 18px; display: grid; gap: 8px; }
+.axes label { display: grid; grid-template-columns: 70px 1fr 40px; gap: 10px; align-items: center; font-family: var(--f-mono); font-size: 11px; color: var(--bruma); }
+.axes input { accent-color: var(--bio); }
+.soft-demo { font-family: var(--f-display); font-size: clamp(54px, 7vw, 110px); line-height: 1; letter-spacing: -.03em; }
+/* ícones */
+.icons { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; }
+.icons div { aspect-ratio: 1; border: 1px solid var(--linha); border-radius: 16px; display: grid; place-items: center; align-content: center; gap: 10px; color: var(--espuma); transition: background .3s, color .3s; }
+.icons div:hover { background: rgba(111, 242, 220, .08); color: var(--bio); }
+.icons svg { width: 30px; height: 30px; }
+.icons span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .08em; color: var(--nevoa); text-transform: uppercase; }
+/* ilustração */
+.renders { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.renders figure { aspect-ratio: 1; border-radius: 18px; border: 1px solid var(--linha); background: radial-gradient(60% 60% at 50% 45%, rgba(111,242,220,.12), transparent 70%); padding: 16px; overflow: hidden; }
+.renders img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 16px 20px rgba(0,0,0,.5)); }
+.rules { display: grid; gap: 10px; margin-top: 8px; }
+.rules li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; color: var(--bruma); font-size: 15.5px; }
+.rules li::before { content: "→"; color: var(--bio); font-family: var(--f-mono); }
+/* movimento */
+.motion { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.motion .pan { min-height: 280px; display: flex; flex-direction: column; gap: 12px; }
+.motion .stage { flex: 1; display: grid; place-items: center; min-height: 140px; border-radius: 14px; background: rgba(2, 8, 14, .5); position: relative; overflow: hidden; cursor: pointer; }
+.motion .stage .h3 { font-size: 34px; }
+.m-emerge span { display: inline-block; transition: transform 1.2s var(--mare), filter 1.1s var(--mare), opacity 1.1s var(--mare); }
+.m-emerge.off span { transform: translateY(40px); filter: blur(10px); opacity: 0; }
+.m-float img { width: 120px; animation: bob 6s ease-in-out infinite; }
+.m-drift { white-space: nowrap; font-family: var(--f-display); font-size: 40px; font-weight: 300; }
+.m-drift div { display: inline-block; animation: drift 14s linear infinite; }
+.m-curve svg { width: 100%; height: 120px; }
+.m-curve .dot { animation: curve 2.4s var(--mare) infinite; }
+@keyframes curve { 0% { transform: translateX(0); } 70%, 100% { transform: translateX(240px); } }
+.ease-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+.ease-table td { padding: 10px; border-bottom: 1px solid var(--linha); }
+.ease-table td:first-child { font-family: var(--f-display); font-size: 19px; font-variation-settings: "opsz" 36, "SOFT" 100; }
+.ease-table code { font-family: var(--f-mono); font-size: 12px; color: var(--bio); }
+/* voz */
+.voice { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.say { padding: 20px 22px; border-radius: 16px; border: 1px solid var(--linha); display: grid; gap: 8px; }
+.say.yes { border-color: rgba(111, 242, 220, .4); }
+.say.no { border-color: rgba(255, 138, 107, .4); }
+.say .mono { font-size: 10.5px; }
+.say.yes .mono { color: var(--bio); }
+.say.no .mono { color: var(--coral); }
+.say p { font-family: var(--f-display); font-size: 21px; line-height: 1.3; font-variation-settings: "opsz" 36, "SOFT" 100; }
+/* aplicações */
+.ticket { display: grid; grid-template-columns: 1fr 120px; border-radius: 18px; overflow: hidden; background: var(--areia-clara); color: var(--abismo); min-height: 220px; }
+.ticket__main { padding: 22px; display: grid; gap: 8px; align-content: space-between; position: relative; }
+.ticket__stub { border-left: 2px dashed rgba(4, 18, 29, .3); padding: 18px 12px; display: grid; place-items: center; text-align: center; background: #E8D7B4; }
+.ticket__stub b { font-family: var(--f-display); font-size: 34px; font-weight: 400; font-variation-settings: "opsz" 72, "SOFT" 100; }
+.ticket .mono { color: #0F6E78; font-size: 10px; }
+.label-card { background: #F7F1E4; color: #1d2a30; border-radius: 6px; padding: 22px 24px; font-size: 13px; display: grid; gap: 10px; box-shadow: 0 20px 40px rgba(0,0,0,.35); border-top: 6px solid #0A3550; }
+.label-card .sci { font-size: 24px; color: #0A3550; }
+.label-card dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; }
+.label-card dt { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: #4C6066; }
+.post { aspect-ratio: 1; border-radius: 18px; overflow: hidden; position: relative; background: radial-gradient(80% 70% at 60% 30%, #1c748b, #0A3550 55%, #04121D); padding: 26px; display: flex; flex-direction: column; justify-content: space-between; }
+.post img.shell { position: absolute; right: -10%; top: -2%; width: 62%; filter: drop-shadow(0 30px 30px rgba(0,0,0,.45)); }
+.post .h3 { position: relative; font-size: clamp(26px, 2.4vw, 36px); max-width: 8em; }
+.post .sig { position: relative; display: flex; align-items: center; gap: 10px; }
+.post .sig svg { width: 34px; height: 34px; color: var(--nacar); }
+@media (max-width: 1000px) {
+  .g-index { grid-template-columns: repeat(3, 1fr); }
+  .ch__head, .g2, .voice { grid-template-columns: 1fr; }
+  .g3, .motion { grid-template-columns: 1fr 1fr; }
+  .g4, .dont { grid-template-columns: 1fr 1fr; }
+  .depthband { grid-template-columns: repeat(3, 1fr); }
+  .swatches { grid-template-columns: repeat(4, 1fr); }
+  .icons { grid-template-columns: repeat(4, 1fr); }
+  .renders { grid-template-columns: repeat(3, 1fr); }
+  .spec > div { grid-template-columns: 1fr; gap: 8px; }
+}
+@media (max-width: 600px) {
+  .g-index { grid-template-columns: 1fr 1fr; }
+  .g3, .motion, .g4 { grid-template-columns: 1fr; }
+  .depthband { grid-template-columns: 1fr 1fr; }
+  .swatches { grid-template-columns: 1fr 1fr; }
+  .ticket { grid-template-columns: 1fr 90px; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs data-sprite></defs></svg>
+
+<header class="g-top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Voltar ao site">
+      <img src="assets/logo/simbolo.svg" width="40" height="40" alt="">
+      <span class="brand__t">Museu <em>das</em> Conchas<small>GUIA DA MARCA · V1</small></span>
+    </a>
+    <a class="btn btn--sm btn--ghost" href="./">Ver o site <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+
+<main>
+<section class="wrap g-hero">
+  <p class="eyebrow mono"><span>Identidade visual</span><span class="z">Museu das Conchas · Itapirubá</span></p>
+  <h1 class="display">A <em>descida.</em></h1>
+  <p class="lead" style="margin-top:30px;max-width:38em">O site do museu é um mergulho: quanto mais você rola, mais fundo vai, e a cor da água muda junto. No fim, a gente sobe de volta e chega à areia de Itapirubá. Este guia reúne tudo o que forma essa identidade, do logo ao movimento.</p>
+  <nav class="g-index" aria-label="Capítulos">
+    <a href="#conceito"><span>01</span>Conceito</a><a href="#logo"><span>02</span>Logo</a><a href="#cores"><span>03</span>Cores</a>
+    <a href="#tipo"><span>04</span>Tipografia</a><a href="#icones"><span>05</span>Ícones</a><a href="#ilustracao"><span>06</span>Ilustração 3D</a>
+    <a href="#componentes"><span>07</span>Componentes</a><a href="#movimento"><span>08</span>Movimento</a><a href="#voz"><span>09</span>Voz e tom</a>
+    <a href="#aplicacoes"><span>10</span>Aplicações</a><a href="#arquivos"><span>11</span>Arquivos</a><a href="./"><span>→</span>Site</a>
+  </nav>
+</section>
+
+<!-- 01 CONCEITO -->
+<section class="ch" id="conceito"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">01 · CONCEITO</p><h2 class="h2">Um lugar como você <em>nunca viu.</em></h2></div>
+    <p class="lead">O slogan é do próprio museu, e o site leva a frase ao pé da letra: ninguém nunca viu o fundo do mar de perto, então o site desce até lá. A identidade nasce de duas ideias, a <strong>profundidade</strong> (o mar vai escurecendo e revelando coisas) e o <strong>múrex</strong>, a concha que já é a marca do museu.</p>
+  </div>
+  <div class="g3">
+    <div class="pan"><p class="mono">Personalidade</p><p class="h3" style="margin-top:14px">Curioso, acolhedor e apaixonado.</p><p class="cap">Fala de ciência como quem mostra um tesouro para a família. Nunca soa como livro didático.</p></div>
+    <div class="pan"><p class="mono">A metáfora</p><p class="h3" style="margin-top:14px">Uma descida e uma subida.</p><p class="cap">Desce da superfície ao abismo (onde estão os gigantes) e sobe "trazendo tudo à tona" até a praia, onde ficam o endereço e o contato.</p></div>
+    <div class="pan"><p class="mono">O símbolo</p><p class="h3" style="margin-top:14px">O múrex.</p><p class="cap">A concha que o museu já usa como marca, redesenhada em traço fino, com a espira, o canal longo e os espinhos curvados para cima.</p></div>
+  </div>
+  <div class="kw"><span class="chip">Profundidade</span><span class="chip">Espiral</span><span class="chip">Nácar</span><span class="chip">Bioluminescência</span><span class="chip">Areia de Itapirubá</span><span class="chip">Gabinete de curiosidades</span><span class="chip">Ciência com afeto</span></div>
+</div></section>
+
+<!-- 02 LOGO -->
+<section class="ch" id="logo"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">02 · LOGO</p><h2 class="h2">O múrex, <em>redesenhado.</em></h2></div>
+    <p class="lead">O múrex é o símbolo do Museu das Conchas. Aqui ele é desenhado por código, em uma linha só, para combinar com a tipografia: corpo em fuso, espira com suturas, abertura, canal longo e espinhos que curvam para cima. É também a família de caramujos que os fenícios usavam para tingir o roxo dos imperadores.</p>
+  </div>
+  <div class="g2">
+    <div class="pan logo-stage"><img src="assets/logo/logo-vertical.svg" alt="Assinatura vertical do Museu das Conchas" width="300"></div>
+    <div class="pan constr">
+      <p class="mono">Construção</p>
+      <img src="assets/logo/construcao.svg" alt="Diagrama de construção do múrex sobre uma grade de 10 por 10" style="width:100%">
+      <p class="cap">Meia silhueta espelhada em torno do eixo, sobre uma grade de 10 × 10. Os espinhos nascem perpendiculares ao contorno e giram para cima: longos no ombro, curtos no canal. Quatro suturas marcam as voltas da espira e um arco desenha a abertura.</p>
+    </div>
+  </div>
+  <div class="g3" style="margin-top:16px">
+    <div class="pan logo-stage" style="min-height:220px"><img src="assets/logo/logo-horizontal.svg" alt="Assinatura horizontal"></div>
+    <div class="pan logo-stage on-sand" style="min-height:220px"><img src="assets/logo/logo-horizontal-areia.svg" alt="Assinatura horizontal sobre areia"></div>
+    <div class="pan logo-stage" style="min-height:220px"><img src="assets/logo/selo.svg" alt="Selo circular" style="max-width:190px"></div>
+  </div>
+  <div class="g4" style="margin-top:16px">
+    <div class="pan logo-stage" style="min-height:180px"><img src="assets/logo/simbolo.svg" alt="Símbolo" width="110"></div>
+    <div class="pan logo-stage on-sand" style="min-height:180px"><img src="assets/logo/simbolo-escuro.svg" alt="Símbolo escuro" width="110"></div>
+    <div class="pan logo-stage" style="min-height:180px"><img src="assets/logo/icone-app.svg" alt="Ícone de app" width="110" style="border-radius:24px"></div>
+    <div class="pan logo-stage" style="min-height:180px;gap:10px;display:flex;align-items:center;justify-content:center"><img src="assets/logo/favicon.svg" alt="" width="64"><img src="assets/logo/favicon.svg" alt="" width="32"><img src="assets/logo/favicon.svg" alt="" width="16"></div>
+  </div>
+  <div class="g2" style="margin-top:16px">
+    <div class="pan"><p class="mono">Área de proteção</p><p class="cap" style="margin-top:10px">Deixe livre, em volta da assinatura, o espaço de uma câmara (a altura do "M" de Museu). Tamanho mínimo: símbolo com 16 px na tela ou 6 mm no impresso; assinatura horizontal com 120 px ou 30 mm de largura.</p></div>
+    <div class="pan"><p class="mono">Versões</p><p class="cap" style="margin-top:10px">Nácar sobre o mar (padrão), azul-crepúsculo sobre areia (impressos claros e rodapé) e uma cor só (<code>currentColor</code>) para carimbos, gravação e bordado.</p></div>
+  </div>
+  <p class="mono" style="color:var(--coral);margin:44px 0 16px">Não faça</p>
+  <div class="dont">
+    <div class="pan"><img src="assets/logo/simbolo.svg" width="90" alt="" style="transform:scaleX(1.5)"><p>Não distorça</p></div>
+    <div class="pan"><img src="assets/logo/simbolo.svg" width="90" alt="" style="filter:hue-rotate(140deg) saturate(6)"><p>Não troque as cores</p></div>
+    <div class="pan"><img src="assets/logo/simbolo.svg" width="90" alt="" style="transform:rotate(90deg)"><p>Não gire</p></div>
+    <div class="pan" style="background:linear-gradient(45deg,#ff7a5c,#ffd27a)"><img src="assets/logo/simbolo.svg" width="90" alt="" style="filter:drop-shadow(4px 4px 0 #000)"><p style="color:#04121D">Sem efeitos nem fundos berrantes</p></div>
+  </div>
+</div></section>
+
+<!-- 03 CORES -->
+<section class="ch" id="cores"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">03 · CORES</p><h2 class="h2">A água muda com a <em>profundidade.</em></h2></div>
+    <p class="lead">As cores de fundo são as zonas reais do oceano. No site, elas não são escolhidas por seção: a cor é calculada ao vivo pela profundidade em que você está.</p>
+  </div>
+  <div class="depthband">
+    <div style="background:#1E7F95"><span>0 m</span><div><b>Superfície</b><br><span>#1E7F95</span></div></div>
+    <div style="background:#0F5872"><span>30 m</span><div><b>Raso</b><br><span>#0F5872</span></div></div>
+    <div style="background:#0A3550"><span>200 m</span><div><b>Crepúsculo</b><br><span>#0A3550</span></div></div>
+    <div style="background:#071F33"><span>1.000 m</span><div><b>Meia-noite</b><br><span>#071F33</span></div></div>
+    <div style="background:#04121D"><span>4.000 m</span><div><b>Abismo</b><br><span>#04121D</span></div></div>
+    <div style="background:#02080E"><span>6.000 m</span><div><b>Fossa</b><br><span>#02080E</span></div></div>
+  </div>
+  <div class="swatches">
+    <div class="sw"><i style="background:#EAF5F2"></i><div><b>Espuma</b><span>#EAF5F2 · texto</span></div></div>
+    <div class="sw"><i style="background:#A9C8CC"></i><div><b>Bruma</b><span>#A9C8CC · texto 2</span></div></div>
+    <div class="sw"><i style="background:#6F949C"></i><div><b>Névoa</b><span>#6F949C · notas</span></div></div>
+    <div class="sw"><i style="background:var(--iris)"></i><div><b>Nácar</b><span>#F4E9DC + íris</span></div></div>
+    <div class="sw"><i style="background:#E8CFA0"></i><div><b>Areia</b><span>#E8CFA0 · ação</span></div></div>
+    <div class="sw"><i style="background:#6FF2DC"></i><div><b>Bio</b><span>#6FF2DC · destaque</span></div></div>
+    <div class="sw"><i style="background:#FF8A6B"></i><div><b>Coral</b><span>#FF8A6B · Brasil, erro</span></div></div>
+  </div>
+  <div class="g2" style="margin-top:16px">
+    <div class="pan">
+      <p class="mono">Proporção de uso</p>
+      <div class="ratio"><div style="flex:62;background:linear-gradient(90deg,#0A3550,#04121D);color:var(--bruma)">ÁGUA 62%</div><div style="flex:20;background:#EAF5F2">ESPUMA 20</div><div style="flex:8;background:#E8CFA0">AREIA 8</div><div style="flex:6;background:#6FF2DC">BIO 6</div><div style="flex:4;background:#FF8A6B">4</div></div>
+      <p class="cap">A água domina. A areia é o único fundo claro (rodapé e impressos) e a cor dos botões principais. Bio e coral são pontuais: profundímetro, foco, selos "Brasil" e "Gigante".</p>
+    </div>
+    <div class="pan">
+      <p class="mono">Contraste (WCAG)</p>
+      <table class="ctab" data-contrast>
+        <tr><th>Combinação</th><th>Razão</th><th>Uso</th></tr>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<!-- 04 TIPOGRAFIA -->
+<section class="ch" id="tipo"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">04 · TIPOGRAFIA</p><h2 class="h2">Uma serifa <em>macia</em> como nácar.</h2></div>
+    <p class="lead">Fraunces tem um eixo chamado SOFT que arredonda as pontas das letras, como pedra rolada pelo mar. Usamos sempre no máximo (SOFT 100). Geist faz o texto e Geist Mono, os dados de mergulho. As três são gratuitas no Google Fonts.</p>
+  </div>
+  <div class="g3">
+    <div class="pan font-card"><p class="mono">Fraunces · títulos e nomes</p><p class="big-a" data-soft>Aa</p>
+      <div class="axes"><label>SOFT <input type="range" min="0" max="100" value="100" data-axis="SOFT"><output>100</output></label><label>WONK <input type="range" min="0" max="1" step="1" value="0" data-axis="WONK"><output>0</output></label><label>PESO <input type="range" min="300" max="600" value="300" data-axis="wght"><output>300</output></label></div></div>
+    <div class="pan font-card geist"><p class="mono">Geist · texto e interface</p><p class="big-a">Aa</p><p class="cap">Pesos 300 a 600. Corpo de 17 px no computador e 16 px no celular, entrelinha 1,6.</p></div>
+    <div class="pan font-card mono"><p class="mono">Geist Mono · dados</p><p class="big-a">−4.200</p><p class="cap">Profundidade, números de catálogo, rótulos. Sempre em caixa alta com espaçamento de 0,14 em.</p></div>
+  </div>
+  <div class="spec" style="margin-top:36px">
+    <div><p class="mono">Display<br>Fraunces 300 · 168 px<br>SOFT 100 · −2,5%</p><p class="display" style="font-size:clamp(48px,7vw,110px)">Um lugar como você <em>nunca viu.</em></p></div>
+    <div><p class="mono">Título 2<br>Fraunces 300 · 104 px</p><p class="h2" style="font-size:clamp(36px,4.6vw,72px)">Os <em>gigantes.</em></p></div>
+    <div><p class="mono">Título 3<br>Fraunces 400 · 34 px</p><p class="h3">Cresce sem mudar de forma.</p></div>
+    <div><p class="mono">Nome científico<br>Fraunces itálico 400</p><p class="sci" style="font-size:30px">Titanostrombus goliath <span style="font-family:var(--f-text);font-style:normal;font-size:15px;color:var(--nevoa)">Schröter, 1805</span></p></div>
+    <div><p class="mono">Destaque<br>Geist 400 · 23 px</p><p class="lead">Mais de 3.500 espécies de conchas de todos os oceanos.</p></div>
+    <div><p class="mono">Texto<br>Geist 400 · 17 px</p><p class="body">O acervo reúne mais de 3.500 espécies de conchas do Brasil e do mundo, de todos os tamanhos e formas, todas catalogadas.</p></div>
+    <div><p class="mono">Rótulo<br>Geist Mono 500 · 12 px</p><p class="mono" style="color:var(--bio);font-size:12px">−320 m · Zona do crepúsculo</p></div>
+  </div>
+  <div class="pan" style="margin-top:16px"><p class="mono">Regra de ouro</p><p class="cap" style="font-size:16px">Nome científico sempre em itálico (é a regra da biologia, e aqui vira estilo). Em títulos, só a palavra de destaque vai em itálico, com o brilho de nácar.</p></div>
+</div></section>
+
+<!-- 05 ÍCONES -->
+<section class="ch" id="icones"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">05 · ÍCONES</p><h2 class="h2">Traço fino, <em>pontas redondas.</em></h2></div>
+    <p class="lead">Grade de 24 px, traço de 1,5 px, cantos e pontas arredondados, sem preenchimento. Eles vivem no próprio site, num sprite SVG, e herdam a cor do texto.</p>
+  </div>
+  <div class="icons" data-icons></div>
+</div></section>
+
+<!-- 06 ILUSTRAÇÃO -->
+<section class="ch" id="ilustracao"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">06 · ILUSTRAÇÃO 3D</p><h2 class="h2">Conchas feitas de <em>matemática.</em></h2></div>
+    <p class="lead">Cada concha do site é um modelo 3D gerado por código, a partir do mesmo modelo de crescimento em espiral que cientistas usam para estudar conchas. Dá para girar todas na ficha de cada espécie.</p>
+  </div>
+  <div class="renders" data-renders></div>
+  <div class="g2" style="margin-top:16px">
+    <div class="pan"><p class="mono">Como iluminar</p><ul class="rules" style="margin-top:12px">
+      <li>Luz vinda de cima, como o sol atravessando a água, e um contraluz azul-esverdeado.</li>
+      <li>Reflexos de um ambiente subaquático, nunca de estúdio branco.</li>
+      <li>Fundo transparente: a concha "flutua" sobre a água do site, com sombra suave.</li>
+      <li>Por dentro, nácar iridescente (náutilo) ou porcelana rosada (búzios).</li></ul></div>
+    <div class="pan"><p class="mono">Quando chegarem as fotos do acervo</p><ul class="rules" style="margin-top:12px">
+      <li>Fotografar cada peça sobre fundo azul-escuro liso, com uma luz lateral rasante.</li>
+      <li>Sempre com uma régua ou escala ao lado, pelo menos numa das fotos.</li>
+      <li>Concha "de pé", ápice para cima e abertura de frente, como nas fichas de museu.</li>
+      <li>Recortar o fundo e exportar em WebP com transparência; o site usa fotos e modelos no mesmo lugar.</li></ul></div>
+  </div>
+</div></section>
+
+<!-- 07 COMPONENTES -->
+<section class="ch" id="componentes"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">07 · COMPONENTES</p><h2 class="h2">Peças do <em>site.</em></h2></div>
+    <p class="lead">Todos são de verdade: passe o mouse, clique, use o teclado.</p>
+  </div>
+  <div class="g2">
+    <div class="pan" style="display:grid;gap:18px">
+      <p class="mono">Botões</p>
+      <div class="btns"><a class="btn" href="#componentes">Planeje sua visita <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="btn btn--ghost" href="#componentes">Começar a descida <svg class="ico down" aria-hidden="true"><use href="#i-down"/></svg></a></div>
+      <div class="btns"><a class="btn btn--bio btn--sm" href="#componentes">Enviar pelo WhatsApp <svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></a><a class="btn btn--sm btn--ghost" href="#componentes">Copiar endereço <svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg></a></div>
+      <p class="cap">Areia é a ação principal (uma por tela). No hover, o nácar sobe de baixo como água enchendo o botão.</p>
+    </div>
+    <div class="pan" style="display:grid;gap:18px;align-content:start">
+      <p class="mono">Filtros, selos e estado</p>
+      <div class="filters" style="margin:0"><button class="chip" type="button" aria-pressed="true" data-chip>Todas <span class="n">12</span></button><button class="chip" type="button" aria-pressed="false" data-chip>Gastrópodes <span class="n">8</span></button><button class="chip" type="button" aria-pressed="false" data-chip>Do Brasil <span class="n">3</span></button></div>
+      <div class="card__tags"><span class="tag tag--br">Brasil</span><span class="tag tag--g">Gigante</span><span class="tag">Gastrópode</span></div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><span class="status is-open"><i></i><span><b>Aberto agora</b> · até as 20h</span></span><span class="status"><i></i><span><b>Fechado</b> · abre sábado às 14h</span></span></div>
+    </div>
+  </div>
+  <div class="g3" style="margin-top:16px">
+    <button class="card" type="button" style="min-height:420px" onclick="location.href='./#concha-nautilus'">
+      <span class="card__top mono"><span>Nº 001</span><span class="card__tags"><span class="tag">Cefalópode</span></span></span>
+      <span class="card__img"><img src="assets/conchas/nautilus.webp" alt=""></span>
+      <span><span class="card__name" style="display:block">Náutilo</span><span class="card__sci sci" style="display:block">Nautilus pompilius</span><span class="card__meta"><span>Indo-Pacífico</span><span class="card__go">Ficha <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></span>
+    </button>
+    <div class="wa-card">
+      <p class="mono">Atalhos de WhatsApp</p>
+      <ul class="wa-list">
+        <li><a class="wa-opt" href="https://wa.me/5548996267470?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20visita%20escolar%20ao%20Museu%20das%20Conchas." target="_blank" rel="noopener"><svg class="wa-opt__ico" aria-hidden="true"><use href="#i-book"/></svg><span><b>Visita escolar</b><small>Abre a conversa com a mensagem pronta</small></span><svg class="wa-opt__go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><a class="wa-opt" href="https://wa.me/5548996267470?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20visita%20escolar%20ao%20Museu%20das%20Conchas." target="_blank" rel="noopener"><svg class="wa-opt__ico" aria-hidden="true"><use href="#i-shell"/></svg><span><b>Doar conchas</b><small>Nada fica salvo no site</small></span><svg class="wa-opt__go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      </ul>
+      <p class="cap">O site não guarda nada. Agendar, doar e tirar dúvidas abre o WhatsApp do museu; tour vai para o Google Maps; catálogo, para o Facebook.</p>
+    </div>
+    <div class="pan" style="display:grid;place-items:center;gap:18px">
+      <p class="mono" style="justify-self:start">Profundímetro</p>
+      <div class="depth is-on" style="position:static;transform:none;max-width:none" aria-hidden="true">
+        <div class="depth__zone">Zona do crepúsculo</div>
+        <div class="depth__val tnum">−320<small>m</small></div>
+        <div class="depth__rail" style="height:160px"><div class="depth__ticks"></div><div class="depth__dot" style="transform:translateY(110px)"></div></div>
+        <div class="depth__read tnum"><span>Temp. <b>8</b> °C</span><span>Pressão <b>33</b> atm</span><span>Luz <b>0,08</b>%</span></div>
+      </div>
+      <p class="cap" style="text-align:center">Fixo à direita. No celular vira uma pílula no canto. Mostra profundidade, zona, temperatura, pressão e luz.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 08 MOVIMENTO -->
+<section class="ch" id="movimento"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">08 · MOVIMENTO</p><h2 class="h2">Tudo se move como <em>dentro d'água.</em></h2></div>
+    <p class="lead">Nada é seco ou mecânico: as coisas emergem, flutuam e são levadas pela correnteza. Clique nas caixas para repetir. Quem pede menos movimento no sistema recebe o site parado, sem perder conteúdo.</p>
+  </div>
+  <div class="motion">
+    <div class="pan"><p class="mono">Emergir · textos</p><div class="stage m-emerge" data-replay><p class="h3"><span>Sobe</span> <span>do</span> <span>fundo</span></p></div><p class="cap">Palavras sobem saindo do desfoque, uma a uma (55 ms entre elas).</p></div>
+    <div class="pan"><p class="mono">Flutuar · conchas</p><div class="stage m-float"><img src="assets/conchas/nautilus.webp" alt=""></div><p class="cap">Sobe e desce 9 px girando 6°, em 6 a 7 s. Cada concha começa num tempo diferente.</p></div>
+    <div class="pan"><p class="mono">Bolhas · cursor</p><div class="stage" data-bubbles><p class="mono" style="color:var(--bruma)">Clique aqui</p><canvas style="position:absolute;inset:0;width:100%;height:100%"></canvas></div><p class="cap">O cursor solta bolhas ao se mover, e um clique solta um punhado.</p></div>
+    <div class="pan"><p class="mono">Correnteza · faixas</p><div class="stage m-drift"><div>Náutilo · <em>Cauri</em> · Tridacna · <em>Argonauta</em> · Náutilo · <em>Cauri</em> · Tridacna · <em>Argonauta</em> ·</div></div><p class="cap">Faixas correm devagar e param quando o mouse passa por cima.</p></div>
+    <div class="pan"><p class="mono">Maré · curva padrão</p><div class="stage m-curve"><svg viewBox="0 0 300 120" aria-hidden="true"><path d="M20 100 C 86 0, 127 0, 280 0" fill="none" stroke="rgba(234,245,242,.3)" transform="translate(0 10)"/><circle class="dot" cx="30" cy="60" r="10" fill="#6FF2DC"/></svg></div><p class="cap">Começa rápido e chega devagar, como uma onda que morre na areia.</p></div>
+    <div class="pan"><p class="mono">Descida · página</p><div class="stage" style="background:linear-gradient(#1E7F95,#0A3550 30%,#04121D 60%,#0A3550 85%,#F1E4CA 86%)"><p class="mono" style="color:var(--espuma)">0 m → −4.200 m → +2 m</p></div><p class="cap">A cor da água, a luz, as cáusticas e as partículas mudam com a profundidade da rolagem.</p></div>
+  </div>
+  <table class="ease-table">
+    <tr><td>Maré</td><td><code>cubic-bezier(.22, 1, .36, 1)</code></td><td>Entradas, revelações, hover · 0,6 a 1,3 s</td></tr>
+    <tr><td>Ressaca</td><td><code>cubic-bezier(.76, 0, .24, 1)</code></td><td>Menu, abertura da ficha, transições de tela · 0,8 a 0,9 s</td></tr>
+    <tr><td>Boia</td><td><code>cubic-bezier(.34, 1.56, .64, 1)</code></td><td>Pontos de anatomia, pequenos "pulos" · 0,4 s</td></tr>
+  </table>
+</div></section>
+
+<!-- 09 VOZ -->
+<section class="ch" id="voz"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">09 · VOZ E TOM</p><h2 class="h2">Fala como um guia <em>apaixonado.</em></h2></div>
+    <p class="lead">Frases curtas, perguntas que despertam curiosidade e números que impressionam. Ciência de verdade, contada como história. Na dúvida, escreva como se estivesse mostrando a concha para uma criança e para o avô dela ao mesmo tempo.</p>
+  </div>
+  <div class="voice">
+    <div class="say yes"><span class="mono">Assim</span><p>Uma concha que foi dinheiro.</p></div>
+    <div class="say no"><span class="mono">Não assim</span><p>A espécie Monetaria moneta possui relevância histórico-econômica.</p></div>
+    <div class="say yes"><span class="mono">Assim</span><p>Choveu? Melhor ainda: é um passeio coberto.</p></div>
+    <div class="say no"><span class="mono">Não assim</span><p>Ambiente climatizado e protegido de intempéries.</p></div>
+    <div class="say yes"><span class="mono">Assim</span><p>Na praia, a melhor lembrança é uma foto.</p></div>
+    <div class="say no"><span class="mono">Não assim</span><p>É proibido retirar conchas do ambiente natural.</p></div>
+  </div>
+</div></section>
+
+<!-- 10 APLICAÇÕES -->
+<section class="ch" id="aplicacoes"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">10 · APLICAÇÕES</p><h2 class="h2">Do ingresso à <em>etiqueta.</em></h2></div>
+    <p class="lead">A identidade sai da tela: ingresso, etiqueta de acervo e posts. Os exemplos usam informações reais do museu, mas o layout é proposta.</p>
+  </div>
+  <div class="g3">
+    <div class="ticket">
+      <div class="ticket__main">
+        <img src="assets/logo/logo-horizontal-areia.svg" alt="" style="width:210px">
+        <div><p class="mono">Ingresso · família</p><p class="h3" style="color:#0A3550">Um lugar como você <em style="font-style:italic;color:#0F6E78">nunca viu.</em></p></div>
+        <p class="mono" style="color:#3D5560">Av. Atlântica, 2322 · Itapirubá · Imbituba SC</p>
+      </div>
+      <div class="ticket__stub"><div><p class="mono">Nº</p><b>0427</b><p class="mono">até 5<br>pessoas</p></div></div>
+    </div>
+    <div class="label-card">
+      <p class="mono" style="color:#0F6E78;font-size:10px">Museu das Conchas · Itapirubá · Acervo</p>
+      <p class="sci">Titanostrombus goliath</p>
+      <p style="font-family:var(--f-display);font-size:19px">Búzio-de-chapéu</p>
+      <dl><dt>Nº</dt><dd>002</dd><dt>Família</dt><dd>Strombidae</dd><dt>Origem</dt><dd>Nordeste do Brasil</dd><dt>Tamanho</dt><dd>até 38 cm</dd></dl>
+    </div>
+    <div class="post">
+      <img class="shell" src="assets/conchas/argonauta.webp" alt="">
+      <p class="mono" style="color:var(--bio);position:relative">Curiosidade · 09</p>
+      <p class="h3">A concha que <em>não é concha.</em></p>
+      <div class="sig"><svg aria-hidden="true"><use href="#mk"/></svg><span class="mono" style="color:var(--bruma)">@museudasconchas</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 11 ARQUIVOS -->
+<section class="ch" id="arquivos"><div class="wrap">
+  <div class="ch__head">
+    <div><p class="ch__n">11 · ARQUIVOS</p><h2 class="h2">Tudo pronto para <em>usar.</em></h2></div>
+    <p class="lead">Tudo está no repositório da Lumini, em <code>projetos/museu-das-conchas/</code>: os logos são SVG gerados a partir da fórmula, as conchas são WebP com fundo transparente e as cores estão no topo do <code>css/site.css</code>.</p>
+  </div>
+  <div class="g4">
+    <div class="sup"><img src="assets/logo/logo-horizontal.svg" alt="" style="width:100%"><b>Logo horizontal</b><span>assets/logo/logo-horizontal.svg</span></div>
+    <div class="sup on-sand" style="color:var(--abismo)"><img src="assets/logo/logo-vertical-areia.svg" alt="" style="height:96px;align-self:center"><b>Logo vertical</b><span style="color:#3D5560">assets/logo/logo-vertical-areia.svg</span></div>
+    <div class="sup"><img src="assets/logo/selo.svg" alt="" style="height:96px;align-self:center"><b>Selo</b><span>assets/logo/selo.svg</span></div>
+    <div class="sup"><img src="assets/logo/simbolo.svg" alt="" style="height:80px;align-self:center"><b>Símbolo</b><span>assets/logo/simbolo-mono.svg (uma cor)</span></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="beach" style="padding-block:60px 30px">
+  <div class="sand" aria-hidden="true"></div>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center">
+    <img src="assets/logo/logo-horizontal-areia.svg" alt="Museu das Conchas" style="width:280px">
+    <a class="btn" href="./">Voltar ao site <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <span class="lumini" style="font-size:13px;color:#3D5560"><i aria-hidden="true"></i>Identidade e site conceito por Lumini</span>
+  </div>
+</footer>
+
+<script type="module">
+// ícones: reaproveita o sprite do site
+const svgText = await (await fetch('assets/icones.svg')).text();
+const doc = new DOMParser().parseFromString(svgText, 'image/svg+xml');
+const defs = doc.querySelector('defs');
+document.querySelector('[data-sprite]').innerHTML = defs.innerHTML;
+const NAMES = { 'i-arrow': 'seta', 'i-down': 'descer', 'i-up': 'subir', 'i-close': 'fechar', 'i-clock': 'horário', 'i-ticket': 'ingresso', 'i-pin': 'local', 'i-phone': 'telefone', 'i-mail': 'e-mail', 'i-chat': 'whatsapp', 'i-fb': 'facebook', 'i-map': 'mapa', 'i-road': 'estrada', 'i-rain': 'chuva', 'i-family': 'família', 'i-book': 'escola', 'i-heart': 'apoio', 'i-bag': 'catálogo', 'i-star': 'avaliar', 'i-shell': 'concha', 'i-copy': 'copiar', 'i-ext': 'externo', 'i-cal': 'data', 'i-whale': 'baleia', 'i-sound': 'som', 'i-left': 'voltar' };
+document.querySelector('[data-icons]').innerHTML = [...defs.querySelectorAll('symbol')].filter(s => s.id !== 'mk')
+  .map(s => `<div><svg aria-hidden="true"><use href="#${s.id}"/></svg><span>${NAMES[s.id] || s.id}</span></div>`).join('');
+
+// conchas
+const { SPECIES } = await import('./js/species.js');
+document.querySelector('[data-renders]').innerHTML = SPECIES.map(s => `<figure title="${s.nome}"><img src="assets/conchas/${s.id}.webp" alt="${s.nome}" loading="lazy"></figure>`).join('');
+
+// contraste (WCAG 2.x)
+{
+  const L = h => { const c = [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16) / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]; };
+  const cr = (a, b) => { const [x, y] = [L(a), L(b)].sort((m, n) => n - m); return (x + .05) / (y + .05); };
+  const rows = [['#EAF5F2', '#04121D', 'Texto no abismo'], ['#EAF5F2', '#0A3550', 'Texto no crepúsculo'], ['#A9C8CC', '#0A3550', 'Texto secundário'], ['#6FF2DC', '#04121D', 'Rótulos bio'], ['#04121D', '#E8CFA0', 'Botão areia'], ['#0F6E78', '#F1E4CA', 'Destaque na areia'], ['#EAF5F2', '#1E7F95', 'Só títulos grandes']];
+  document.querySelector('[data-contrast]').insertAdjacentHTML('beforeend', rows.map(([f, b, u]) => { const v = cr(f, b); return `<tr><td><span class="ex" style="color:${f};background:${b}">Aa</span></td><td class="${v >= 4.5 ? 'ok' : 'warn'}">${v.toFixed(1).replace('.', ',')}:1 ${v >= 7 ? 'AAA' : v >= 4.5 ? 'AA' : 'AA grande'}</td><td>${u}</td></tr>`; }).join(''));
+}
+
+// eixos variáveis da Fraunces
+{
+  const el = document.querySelector('[data-soft]'), st = { SOFT: 100, WONK: 0, wght: 300 };
+  document.querySelectorAll('[data-axis]').forEach(i => i.addEventListener('input', () => {
+    st[i.dataset.axis] = +i.value; i.nextElementSibling.textContent = i.value;
+    el.style.fontVariationSettings = `"opsz" 144, "SOFT" ${st.SOFT}, "WONK" ${st.WONK}`; el.style.fontWeight = st.wght;
+  }));
+}
+
+// chips
+document.querySelectorAll('[data-chip]').forEach(c => c.addEventListener('click', () => document.querySelectorAll('[data-chip]').forEach(o => o.setAttribute('aria-pressed', String(o === c)))));
+
+// emergir de novo
+document.querySelectorAll('[data-replay]').forEach(st => {
+  const spans = st.querySelectorAll('span'); spans.forEach((s, i) => s.style.transitionDelay = i * .09 + 's');
+  const play = () => { st.classList.add('off'); requestAnimationFrame(() => requestAnimationFrame(() => st.classList.remove('off'))); };
+  st.addEventListener('click', play);
+  new IntersectionObserver(([e]) => e.isIntersecting && play(), { threshold: .6 }).observe(st);
+});
+
+// bolhas
+document.querySelectorAll('[data-bubbles]').forEach(st => {
+  const cv = st.querySelector('canvas'), ctx = cv.getContext('2d'), B = [];
+  const fit = () => { cv.width = st.clientWidth * 2; cv.height = st.clientHeight * 2; ctx.setTransform(2, 0, 0, 2, 0, 0); };
+  fit(); addEventListener('resize', fit);
+  const add = (x, y, n) => { for (let i = 0; i < n; i++) B.push({ x: x + (Math.random() - .5) * 20, y: y + (Math.random() - .5) * 20, r: 2 + Math.random() * 5, vy: -(.5 + Math.random() * 1.5), p: Math.random() * 6, l: 0 }); };
+  st.addEventListener('pointermove', e => { const r = st.getBoundingClientRect(); if (Math.random() < .3) add(e.clientX - r.left, e.clientY - r.top, 1); });
+  st.addEventListener('pointerdown', e => { const r = st.getBoundingClientRect(); add(e.clientX - r.left, e.clientY - r.top, 18); });
+  (function loop() {
+    requestAnimationFrame(loop); ctx.clearRect(0, 0, cv.width, cv.height);
+    for (let i = B.length - 1; i >= 0; i--) { const b = B[i]; b.l++; b.y += b.vy; b.vy -= .02; b.x += Math.sin(b.l * .08 + b.p) * .6; const a = 1 - b.l / 110; if (a <= 0) { B.splice(i, 1); continue; }
+      ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, 7); ctx.strokeStyle = `rgba(234,245,242,${a * .7})`; ctx.stroke(); }
+  })();
+});
+</script>
+</body>
+</html>
