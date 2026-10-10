@@ -107,6 +107,7 @@ async function intro() {
   const counter = gsap.to(st, { v: 86, duration: 1.6, ease: 'power1.out', onUpdate: () => { count.textContent = Math.round(st.v); } });
   await Promise.race([Promise.all([fonts, oceanReady, new Promise(r => setTimeout(r, 1100))]), new Promise(r => setTimeout(r, 3000))]);
   counter.kill(); draw.progress(1);
+  gsap.to(paths, { fillOpacity: 1, duration: .5, ease: 'power1.out' });
   await gsap.to(st, { v: 100, duration: .4, ease: 'power1.out', onUpdate: () => { count.textContent = Math.round(st.v); } });
   const tl = gsap.timeline();
   tl.to('.loader__msg', { yPercent: -30, opacity: 0, duration: .5, ease: 'power2.in' }, 0)

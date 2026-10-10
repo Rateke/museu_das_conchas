@@ -45,7 +45,7 @@ Slogan (o do próprio museu): **Um lugar como você nunca viu.**
 
 ## Identidade em resumo
 
-- **Símbolo:** o **múrex**, a concha que o museu já usa como marca, redesenhado em uma linha só (corpo em fuso, espira, abertura, canal longo e espinhos curvados para cima). Gerado por código em `tools/museu-logo.mjs`.
+- **Símbolo:** o **múrex**, a concha que o museu já usa como marca, redesenhado como silhueta cheia em uma cor só (espira em degraus, corpo largo, abertura vazada, canal curto e espinhos grossos curvados para cima). Gerado por código em `tools/museu-logo.mjs`.
 - **Cores:** as zonas do oceano (Superfície `#1E7F95`, Raso `#0F5872`, Crepúsculo `#0A3550`, Meia-noite `#071F33`, Abismo `#04121D`, Fossa `#02080E`) e as luzes (Espuma `#EAF5F2`, Nácar com brilho iridescente, Areia `#E8CFA0`, Bio `#6FF2DC`, Coral `#FF8A6B`).
 - **Tipos:** Fraunces com SOFT 100 (títulos, nomes científicos em itálico), Geist (texto), Geist Mono (dados de mergulho). Todas gratuitas no Google Fonts.
 

@@ -108,8 +108,8 @@ main { position: relative; z-index: 2; }
 .loader { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: var(--superficie); color: var(--nacar); overflow: hidden; }
 .loader__sky { position: absolute; inset: 0; background: linear-gradient(#bfe9ee 0%, #7fcfd8 50%, #2a97a8 100%); }
 .loader__inner { position: relative; display: grid; justify-items: center; gap: 22px; text-align: center; }
-.loader__mark { width: clamp(110px, 16vw, 170px); }
-.loader__mark path { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); }
+.loader__mark { width: clamp(130px, 18vw, 200px); }
+.loader__mark path { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); fill-opacity: 0; }
 .loader__msg { font-family: var(--f-display); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 100; font-size: clamp(26px, 3vw, 40px); color: var(--abismo); letter-spacing: -.01em; }
 .loader__msg em { font-style: italic; }
 .loader__count { color: var(--crepusculo); }
@@ -123,7 +123,8 @@ main { position: relative; z-index: 2; }
 .hdr.is-hidden { transform: translateY(-110%); }
 .hdr__in { display: flex; align-items: center; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; flex: none; }
-.brand svg { width: 42px; height: 42px; }
+.brand { gap: 10px; }
+.brand svg { width: 58px; height: 58px; margin-block: -8px; }
 .brand__t { font-family: var(--f-display); font-weight: 400; font-variation-settings: "opsz" 72, "SOFT" 100; font-size: 21px; line-height: 1; letter-spacing: -.01em; }
 .brand__t em { font-style: italic; }
 .brand__t small { display: block; font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .2em; color: var(--bio); margin-top: 5px; font-weight: 500; }
@@ -715,6 +716,7 @@ option { background: var(--abismo); color: var(--espuma); }
   .facts dt { border-bottom: 0; padding-bottom: 0; }
   .ftr { grid-template-columns: 1fr; }
   .brand__t small { display: none; }
+  .brand svg { width: 48px; height: 48px; }
   .sound__lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .hero__foot > .mono { display: none; }
   .hero__foot .status { white-space: nowrap; font-size: 13px; }
